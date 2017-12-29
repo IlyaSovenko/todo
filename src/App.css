@@ -1,0 +1,84 @@
+.App {
+  margin: 20px auto;
+  width: 60%;
+  text-align: center;
+}
+
+.App > h1 {
+  font-family: 'Bungee', cursive;
+  color: #ffffffcf;
+}
+
+.todo-container {
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  background-color: #d3ffed75;
+  box-shadow: 0 0 10px #9bbbae75;
+  padding: 20px;
+}
+
+.todo-container ul {
+  list-style-type: none;
+}
+
+.todo-container li {
+  margin: 10px;
+  text-align: left;
+  padding-left: 40%;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-custom {
+  margin-right: 10px;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff75;
+  border-radius: 3px;
+}
+
+.checkbox-custom,
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox:checked + .checkbox-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background: #ffffffcf;
+  border-radius: 2px;
+}
+
+.doneTask {
+  text-decoration: line-through;
+}
+
+.todo-container .btn {
+  margin-top: 10px;
+  margin-left: 15px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #3d52f1cf;
+  border: 0;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  width: 170px;
+  border-radius: 3px;
+  color: #fff;
+  height: 38px;
+  transition: all 0.3s ease;
+}
+
+.todo-container .btn:hover {
+  background-color: rgba(61, 82, 241, 0.72);
+}
