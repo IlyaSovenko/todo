@@ -5,12 +5,8 @@ import { Store, ITodo } from '../../store';
 import * as React from 'react';
 import './itemList.css';
 
-interface IStoreProps {
+export interface IStoreProps {
     store?: Store;
-}
-
-export interface ITodoViewProps extends IStoreProps {
-    todo: ITodo;
 }
 
 @inject('store')
@@ -23,9 +19,9 @@ export class TodoList extends React.Component <IStoreProps> {
                 {store.report}
                 <ul>
                     {store.todos && store.todos.map(
-                        (todo: ITodo, idx: number) => (
-                            <li>
-                                <TodoView todo={todo} key={todo.id} />
+                        (todo: ITodo) => (
+                            <li key={todo.id}>
+                                <TodoView todo={todo} />
                             </li>
                         ))}
                 </ul>
@@ -37,11 +33,9 @@ export class TodoList extends React.Component <IStoreProps> {
             </div>
         );
     }
-    @action onNewTodo = (): void => {
-        this.props.store!.addTodo(prompt('Enter a new todo:', 'coffee plz'));
-    }
+    @action onNewTodo = (): void => { this.props.store!.addTodo(''); };
     @action onAsyncNewTodo = (): void => {
-        this.props.store!.asyncAddTodo(prompt('Enter a new todo:', 'coffee plz'))
+        this.props.store!.asyncAddTodo('')
             .catch((e: {}) => console.log(e));
     }
 }

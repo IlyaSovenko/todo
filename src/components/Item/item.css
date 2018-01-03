@@ -32,3 +32,12 @@
 .doneTask {
     text-decoration: line-through;
 }
+
+.input:focus {
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffffcf;;
+    border: 1px solid #3d52f1cf;
+    padding: 3px;
+    border-radius: 3px;
+}

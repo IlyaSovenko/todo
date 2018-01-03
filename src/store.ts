@@ -21,7 +21,7 @@ class Store {
     }
 
     @computed get report(): string {
-        if (this.todos.length === 0) {
+        if (this.todos.filter((todo: ITodo) => todo.task !== '').length === 0) {
             return 'No todos, add something';
         }
 
@@ -33,29 +33,25 @@ class Store {
             `Progress: ${this.completedTodosCount}/${this.todos.length}`;
     }
 
-    @action addTodo(task?: string | null): void {
-        if (task) {
-            this.todos.push({
-                id: Math.random(),
-                task: task,
-                completed: false,
-            });
-        }
+    @action addTodo(task: string): void {
+        this.todos.push({
+            id: Math.random(),
+            task: task,
+            completed: false,
+        });
     }
-    @action async asyncAddTodo(task?: string | null) {
+    @action async asyncAddTodo(task: string) {
         this.pendingRequests++;
-        if (task) {
-            setTimeout(
-                () => {
-                    this.todos.push({
-                        id: Math.random(),
-                        task: task,
-                        completed: false,
-                    });
-                    this.pendingRequests--; },
-                1000
-            );
-        }
+        setTimeout(
+            () => {
+                this.todos.push({
+                    id: Math.random(),
+                    task: task,
+                    completed: false,
+                });
+                this.pendingRequests--; },
+            1000
+        );
     }
 }
 
