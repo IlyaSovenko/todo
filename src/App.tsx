@@ -3,13 +3,15 @@ import './App.css';
 import { inject, observer } from 'mobx-react';
 import { action } from 'mobx';
 import { Store, ITodo } from './store';
+import DevTools from 'mobx-react-devtools';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <h1>ToDo</h1>
-        <TodoList/>
+        <TodoList />
+        <DevTools position={{ top: 10, left: 100 }} />
       </div>
     );
   }
