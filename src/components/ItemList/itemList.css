@@ -1,0 +1,41 @@
+.todo-container {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    background-color: #d3ffed75;
+    box-shadow: 0 0 10px #9bbbae75;
+    padding: 20px;
+}
+
+.todo-container ul {
+    list-style-type: none;
+}
+
+.todo-container li {
+    margin: 10px;
+    text-align: left;
+    padding-left: 40%;
+}
+
+.todo-container .btn {
+    margin-top: 10px;
+    margin-left: 15px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #3d52f1cf;
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    width: 170px;
+    border-radius: 3px;
+    color: #fff;
+    height: 38px;
+    transition: all 0.3s ease;
+}
+
+.todo-container .btn:hover {
+    background-color: rgba(61, 82, 241, 0.72);
+}
