@@ -3,6 +3,7 @@ import * as React from 'react';
 import { IStoreProps } from '../ItemList';
 import './item.css';
 import { ITodo } from '../../store';
+import { ChangeEvent } from 'react';
 
 interface ITodoViewProps extends IStoreProps {
     todo: ITodo;
@@ -41,13 +42,13 @@ export class TodoView extends React.Component<ITodoViewProps, {changed: boolean,
         );
     }
 
-    onToggleCompleted = (): void => { this.props.todo.completed = !this.props.todo.completed; };
+    onToggleCompleted = () => { this.props.todo.completed = !this.props.todo.completed; };
 
-    onHandleRename = (event: {target: {value: string}}): void => { this.setState({value: event.target.value}); };
+    onHandleRename = (event: ChangeEvent<HTMLInputElement>) => { this.setState({value: event.target.value}); };
 
-    onRename = (): void => { this.setState({changed: true}); };
+    onRename = () => { this.setState({changed: true}); };
 
-    onEndEditing = (): void => {
+    onEndEditing = () => {
         this.setState({changed: false});
         if (this.state.value) {
             this.props.todo.task = this.state.value;
