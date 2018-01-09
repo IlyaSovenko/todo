@@ -1,12 +1,18 @@
 import { inject, observer } from 'mobx-react';
 import { TodoView } from '../Item';
 import { action } from 'mobx';
-import { Store, ITodo } from '../../store';
+import { Store } from '../../store';
 import * as React from 'react';
 import './itemList.css';
 
 export interface IStoreProps {
     store?: Store;
+}
+
+export interface ITodo {
+    id: number;
+    task: string;
+    completed: boolean;
 }
 
 @inject('store')

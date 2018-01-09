@@ -1,10 +1,5 @@
 import mobx, { observable, computed, action, IObservableArray } from 'mobx';
-
-export interface ITodo {
-    id: number;
-    task: string;
-    completed: boolean;
-}
+import { ITodo } from './components/ItemList/index';
 
 class Store {
     @observable todos: IObservableArray<ITodo> = observable([]);
